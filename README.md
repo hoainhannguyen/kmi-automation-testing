@@ -1,1 +1,3 @@
-# kmi-automation-testing
+# KMI Automation Testing
+Ruby
+Selenium
