@@ -6,8 +6,8 @@ module LoginSuccess
     def LoginSuccess.run
         driver = Selenium::WebDriver::Driver.for :chrome
 
-        reoprtFilePath = FileUtils.get_file_path('../reports/index.html')
-        reoprtFile = File.new(reoprtFilePath, 'r+')
+        reportFilePath = FileUtils.get_file_path('../reports/index.html')
+        reportFile = File.new(reportFilePath, 'r+')
 
         begin
             driver.manage.window.maximize
@@ -40,7 +40,7 @@ module LoginSuccess
             $fluent_wait.until { driver.find_element(class: 'se-user-detail-container').displayed? }
         ensure
             driver.close
-            reoprtFile.write '
+            reportFile.write '
                 <html>
                     <head>
                         <meta charset="UTF-8">
