@@ -14,9 +14,7 @@ GEM
     netrc (0.11.0)
     nokogiri (1.13.4-x64-mingw-ucrt)
       racc (~> 1.4)
-    power_assert (2.0.1)
     racc (1.6.0)
-    rake (13.0.6)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -28,8 +26,6 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    test-unit (3.5.3)
-      power_assert
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.1)
@@ -43,10 +39,8 @@ PLATFORMS
 
 DEPENDENCIES
   ffi (~> 1.15, >= 1.15.5)
-  rake (~> 13.0, >= 13.0.6)
   rest-client (~> 2.1)
   selenium-webdriver (~> 4.1)
-  test-unit (~> 3.5, >= 3.5.3)
   webdrivers (~> 5.0)
 
 BUNDLED WITH

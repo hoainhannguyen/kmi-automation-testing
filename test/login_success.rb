@@ -10,7 +10,7 @@ module LoginSuccess
         reoprtFile = File.new(reoprtFilePath, 'r+')
 
         begin
-            # driver.manage.window.maximize
+            driver.manage.window.maximize
             driver.navigate.to $domain
             
             $fluent_wait.until { driver.find_element(id: 'username').displayed? }

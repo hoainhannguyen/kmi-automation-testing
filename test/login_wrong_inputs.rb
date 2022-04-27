@@ -7,7 +7,7 @@ module LoginWrongInputs
         driver = Selenium::WebDriver::Driver.for :chrome
 
         begin
-            # driver.manage.window.maximize
+            driver.manage.window.maximize
             driver.navigate.to $domain
             
             $fluent_wait.until { driver.find_element(id: 'username').displayed? }
