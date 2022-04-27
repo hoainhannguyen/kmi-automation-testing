@@ -104,9 +104,8 @@ module CreatePhoneSuccess
             sleep 3
 
             $fluent_wait.until { driver.find_element(css: ".se-device-detail-container").displayed? }
-
-            sleep 3
         ensure
+            sleep 5
             driver.close
         end
     end
