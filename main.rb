@@ -1,3 +1,3 @@
-require "./tests/login.rb"
+require './tests/login.rb'
 
 Login.run
