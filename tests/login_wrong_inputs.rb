@@ -1,35 +1,28 @@
 require 'selenium-webdriver'
 require 'webdrivers/chromedriver'
-require_relative '../utils/wait.rb'
+require_relative '../utils/file.rb'
 
-module Login
-    def Login.run
+module LoginWrongInputs
+    def LoginWrongInputs.run
         driver = Selenium::WebDriver::Driver.for :chrome
-        
-        username = 'haotran.081097@gmail.com'
-        password = 'Haohao@1997'
-        
+
         begin
-            driver.manage.window.maximize
-            driver.navigate.to 'https://hana291020.360awareqa.com/'
+            # driver.manage.window.maximize
+            driver.navigate.to $domain
             
             $fluent_wait.until { driver.find_element(id: 'username').displayed? }
             inputUsername = driver.find_element(id: 'username')
-            inputUsername.send_keys username
+            inputUsername.send_keys $wrong_username
             
             $fluent_wait.until { driver.find_element(id: 'password').displayed? }
             inputPassword = driver.find_element(id: 'password')
-            inputPassword.send_keys password
+            inputPassword.send_keys $wrong_password
             
             $fluent_wait.until { driver.find_element(class: 'waves-button-input').displayed? }
             buttonSubmit = driver.find_element(class: 'waves-button-input')
             buttonSubmit.click
-            
-            $fluent_wait.until { driver.find_element(class: 'btn-message').displayed? }
-            buttonAccept = driver.find_element(class: 'btn-message')
-            buttonAccept.click
-            
-            $fluent_wait.until { driver.find_element(class: 'mat-toolbar').displayed? }
+
+            $fluent_wait.until { driver.find_element(class: 'validation-summary-errors').displayed? }
         ensure
             driver.close
         end

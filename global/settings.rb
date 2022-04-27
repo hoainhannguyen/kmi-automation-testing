@@ -1,0 +1,5 @@
+$domain = 'https://hana291020.360awareqa.com/'
+$username = 'haotran.081097@gmail.com'
+$wrong_username = 'wrong.haotran.081097@gmail.com'
+$password = 'Haohao@1997'
+$wrong_password = 'wrong.Haohao@1997'
