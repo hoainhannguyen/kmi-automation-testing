@@ -1,3 +1,3 @@
 # KMI Automation Testing
-Ruby
-Selenium
+- Ruby
+- Selenium
