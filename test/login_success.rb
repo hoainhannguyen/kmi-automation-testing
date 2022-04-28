@@ -6,7 +6,7 @@ module LoginSuccess
     def LoginSuccess.run
         driver = Selenium::WebDriver::Driver.for :chrome
         Selenium::WebDriver.logger.level = :warn
-        Selenium::WebDriver.logger.output = FileUtils.get_file_path('../reports/logs.log')
+        Selenium::WebDriver.logger.output = FileUtils.get_file_path('../logs/logs.log')
 
         begin
             driver.manage.window.maximize
