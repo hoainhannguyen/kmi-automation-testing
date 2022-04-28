@@ -1,13 +1,13 @@
 require 'selenium-webdriver'
 require 'webdrivers/chromedriver'
-require_relative '../utils/file.rb'
+# require_relative '../utils/file.rb'
 
 module CreatePhoneSuccess
     def CreatePhoneSuccess.run
         driver = Selenium::WebDriver::Driver.for :chrome
 
-        reportFilePath = FileUtils.get_file_path('../reports/log.txt')
-        reportFile = File.new(reportFilePath, 'r+')
+        # reportFilePath = FileUtils.get_file_path('../reports/log.txt')
+        # reportFile = File.new(reportFilePath, 'r+')
         
         begin
             driver.manage.window.maximize
@@ -16,7 +16,7 @@ module CreatePhoneSuccess
             sleep 2
             
             $fluent_wait.until { driver.find_element(id: 'username').displayed? }
-            inputUsername = driver.find_element(id:1 'username')
+            inputUsername = driver.find_element(id: 'username')
             inputUsername.send_keys $username
 
             sleep 2
