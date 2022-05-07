@@ -1,6 +1,9 @@
+import os
 import logging
 
-logging.basicConfig(filename="./logs/console.log", filemode="a", encoding="utf-8", level=logging.INFO)
+if not os.path.exists("logs"):
+    os.mkdir("logs")
+logging.basicConfig(filename="logs/console.log", filemode="a", encoding="utf-8", level=logging.INFO)
 
 
 def log(entry):

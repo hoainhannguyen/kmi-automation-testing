@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "build": "pyinstaller --onefile --windowed --add-data logs;. main.py"
+    }
+}
