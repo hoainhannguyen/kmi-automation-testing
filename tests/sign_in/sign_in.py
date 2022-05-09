@@ -29,8 +29,9 @@ class SignInCase:
             sleep(1)
             wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "waves-button-input")))
             self.driver.find_element(by=By.CLASS_NAME, value="waves-button-input").click()
+            sleep(1)
+        except:
+            print("SIGN IN ===========> FAILED")
         finally:
             for entry in self.driver.get_log("browser"):
                 logger.log(entry)
-            print("SIGN IN ===========> PASSED")
-            
