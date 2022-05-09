@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "pyinstaller --onefile --windowed main.py & Xcopy /E /I logs dist\\logs & Xcopy /E /I webdrivers dist\\webdrivers",
+        "build": "pyinstaller --onefile --windowed main.py & Xcopy /E /I logs dist\\logs /Y & Xcopy /E /I webdrivers /Y dist\\webdrivers",
         "dev": "py -B main.py"
     }
 }
