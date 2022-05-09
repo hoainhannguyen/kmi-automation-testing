@@ -1,5 +1,7 @@
 {
     "use": "default",
-    "default": {},
+    "default": {
+        "typeDelete": "Delete"
+    },
     "custom": {}
 }

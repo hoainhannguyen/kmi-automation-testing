@@ -63,13 +63,14 @@ class NewDeviceCase:
             self.driver.find_element(
                 By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["default"]["deviceName"])
             sleep(1)
-            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".table-container--devicelist tbody tr")))
-            self.driver.find_element(By.CSS_SELECTOR, ".table-container--devicelist tbody tr").click()
-            sleep(1)
-            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".se-device-detail-container")))
-            sleep(1)
+            # wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".table-container--devicelist tbody tr")))
+            # self.driver.find_element(By.CSS_SELECTOR, ".table-container--devicelist tbody tr").click()
+            # sleep(1)
+            # wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".se-device-detail-container")))
+            # sleep(1)
         except:
             print("NEW DEVICE ===========> FAILED")
         finally:
             for entry in self.driver.get_log("browser"):
+                # print("NEW DEVICE ===========> PASSED")
                 logger.log(entry)
