@@ -8,6 +8,7 @@ from tests.new_device import new_device
 
 # WEBDRIVERS
 webdriver = chromedriver.ChromeDriver()
+webdriver.maximize()
 
 
 def quit():
