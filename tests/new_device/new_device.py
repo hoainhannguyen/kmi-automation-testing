@@ -33,7 +33,7 @@ class NewDeviceCase:
                 (By.CSS_SELECTOR, "button.se-menuitem-createdevice[aria-label='Smartphone']")))
             self.driver.find_element(By.CSS_SELECTOR,
                                      "button.se-menuitem-createdevice[aria-label='Smartphone']").click()
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR, "input[formControlName='deviceName']")))
@@ -58,7 +58,7 @@ class NewDeviceCase:
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "kmi-quick-search input")))
             self.driver.find_element(
                 By.CSS_SELECTOR, "kmi-quick-search input").send_keys(configs["default"]["projectName"])
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "mat-radio-button")))
             self.driver.find_element(By.CSS_SELECTOR, "mat-radio-button").click()
@@ -66,12 +66,12 @@ class NewDeviceCase:
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".btn-save-process .mat-flat-button")))
             self.driver.find_element(By.CSS_SELECTOR, ".btn-save-process .mat-flat-button").click()
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".search-toolbar input")))
             self.driver.find_element(
                 By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["default"]["deviceName"])
-            sleep(5)
+            sleep(3)
         except:
             status = False
         finally:

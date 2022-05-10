@@ -28,7 +28,7 @@ class DeleteDeviceCase:
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".search-toolbar input")))
             self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").clear()
             self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["default"]["deviceName"])
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[mattooltip='Quick Actions']")))
             self.driver.find_element(By.CSS_SELECTOR, "button[mattooltip='Quick Actions']").click()
@@ -40,11 +40,11 @@ class DeleteDeviceCase:
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button mat-icon[svgicon='ic_delete_48px']")))
             self.driver.find_element(By.CSS_SELECTOR, "button mat-icon[svgicon='ic_delete_48px']").click()
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".btn-save-process .mat-flat-button")))
             self.driver.find_element(By.CSS_SELECTOR, ".btn-save-process .mat-flat-button").click()
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[mattooltip='Quick Actions']")))
             self.driver.find_element(By.CSS_SELECTOR, "button[mattooltip='Quick Actions']").click()
@@ -56,7 +56,7 @@ class DeleteDeviceCase:
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[aria-label='Permanently Delete']")))
             self.driver.find_element(By.CSS_SELECTOR, "button[aria-label='Permanently Delete']").click()
-            sleep(5)
+            sleep(3)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[placeholder='Type Delete']")))
             self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Type Delete']").send_keys(configs["default"]["confirmText"])
@@ -64,7 +64,7 @@ class DeleteDeviceCase:
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".btn-save-process .mat-flat-button")))
             self.driver.find_element(By.CSS_SELECTOR, ".btn-save-process .mat-flat-button").click()
-            sleep(5)
+            sleep(3)
         except:
             status = False
         finally:

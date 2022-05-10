@@ -46,7 +46,7 @@ class SignInCase:
                 self.driver.find_element(By.CSS_SELECTOR, ".btn-message .btn-submit.waves-effect.btn-flat").click()
                 sleep(10)
 
-            sleep(5)
+            sleep(3)
         except:
             status = False
         finally:
