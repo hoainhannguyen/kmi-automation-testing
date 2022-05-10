@@ -24,7 +24,9 @@ class SignInCase:
                 configs = json.load(signInFile)
             with open("configs/global_settings.json", encoding='utf-8') as globalSettingsFile:
                 globalSettings = json.load(globalSettingsFile)
+
             self.driver.get(globalSettings["domain"])
+            sleep(10)
 
             wait.until(EC.visibility_of_element_located((By.ID, "username")))
             self.driver.find_element(By.ID, "username").send_keys(configs["default"]["username"])
@@ -37,6 +39,14 @@ class SignInCase:
             wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "waves-button-input")))
             self.driver.find_element(By.CLASS_NAME, "waves-button-input").click()
             sleep(1)
+
+            if configs["default"]["eula"] == 1:
+                wait.until(EC.visibility_of_element_located(
+                    (By.CSS_SELECTOR, ".btn-message .btn-submit.waves-effect.btn-flat")))
+                self.driver.find_element(By.CSS_SELECTOR, ".btn-message .btn-submit.waves-effect.btn-flat").click()
+                sleep(10)
+
+            sleep(5)
         except:
             status = False
         finally:

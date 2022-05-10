@@ -3,7 +3,8 @@
     "default": {
         "domain": "https://sraautomation.360awareqa.com/",
         "username": "haotran.081097@gmail.com",
-        "password": "Haohao@1997"
+        "password": "Haohao@1997",
+        "eula": 1
     },
     "custom": {}
 }
