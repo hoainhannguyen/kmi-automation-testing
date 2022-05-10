@@ -1,7 +1,9 @@
 {
     "use": "default",
     "default": {
-        "typeDelete": "Delete"
+        "devicesURL": "https://sraautomation.360awareqa.com/aware/manage/devices",
+        "deviceName": "Automation Testing 0001",
+        "confirmText": "Delete"
     },
     "custom": {}
 }

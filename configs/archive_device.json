@@ -1,7 +1,0 @@
-{
-    "use": "default",
-    "default": {
-        "devicesURL": "https://hana291020.360awareqa.com/aware/manage/devices"
-    },
-    "custom": {}
-}

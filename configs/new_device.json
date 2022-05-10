@@ -1,9 +1,9 @@
 {
     "use": "default",
     "default": {
-        "devicesURL": "https://hana291020.360awareqa.com/aware/manage/devices",
+        "devicesURL": "https://sraautomation.360awareqa.com/aware/manage/devices",
         "deviceName": "Automation Testing 0001",
-        "accessName": "Bi Project"
+        "projectName": "Bi Project"
     },
     "custom": {}
 }
