@@ -26,7 +26,8 @@ class DeleteDeviceCase:
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".search-toolbar input")))
-            self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["devicesURL"]["deviceName"])
+            self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").clear()
+            self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["default"]["deviceName"])
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[mattooltip='Quick Actions']")))
@@ -58,7 +59,7 @@ class DeleteDeviceCase:
             sleep(2)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[placeholder='Type Delete']")))
-            self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Type Delete']").send_keys(configs["devicesURL"]["confirmText"])
+            self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Type Delete']").send_keys(configs["default"]["confirmText"])
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".btn-save-process .mat-flat-button")))

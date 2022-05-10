@@ -35,7 +35,7 @@ class NewDeviceCase:
 
             wait.until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR, "button.se-menuitem-createdevice[aria-label='Smartphone']")))
-            self.driver.find_element(By.CSS_SELECTOR, "button.-menuitem-createdevice[aria-label='Smartphone']").click()
+            self.driver.find_element(By.CSS_SELECTOR, "button.se-menuitem-createdevice[aria-label='Smartphone']").click()
             sleep(1)
 
             wait.until(EC.visibility_of_element_located(
@@ -60,7 +60,7 @@ class NewDeviceCase:
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "kmi-quick-search input")))
             self.driver.find_element(
-                By.CSS_SELECTOR, "kmi-quick-search input").send_keys(configs["default"]["accessName"])
+                By.CSS_SELECTOR, "kmi-quick-search input").send_keys(configs["default"]["projectName"])
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "mat-radio-button")))
