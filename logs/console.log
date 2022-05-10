@@ -1,2 +1,0 @@
-INFO:root:{'level': 'SEVERE', 'message': 'https://sraautomation.360awareqa.com/ - Failed to load resource: the server responded with a status of 404 ()', 'source': 'network', 'timestamp': 1652162715149}
-INFO:root:{'level': 'SEVERE', 'message': 'https://sraautomation.360awareqa.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()', 'source': 'network', 'timestamp': 1652162715422}
