@@ -25,8 +25,12 @@ def run():
         runningStatus.insert(INSERT, "New Device Case ==========================> PASSED\n")
     if newDeviceStatus == False:
         runningStatus.insert(INSERT, "New Device Case ==========================> FAILED\n")
-    # delete_device.DeleteDeviceCase(webdriver).run()
-    # runningStatus.insert(INSERT, "Delete Device Case =======================> PASSED\n")
+    # Delete Device Case
+    deleteDeviceStatus = delete_device.DeleteDeviceCase(webdriver.driver).run()
+    if deleteDeviceStatus == True:
+        runningStatus.insert(INSERT, "Delete Device Case =======================> PASSED\n")
+    if deleteDeviceStatus == False:
+        runningStatus.insert(INSERT, "Delete Device Case =======================> FAILED\n")
     webdriver.quit()
 
 

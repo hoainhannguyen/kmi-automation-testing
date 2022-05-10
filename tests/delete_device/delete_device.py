@@ -14,6 +14,7 @@ class DeleteDeviceCase:
         self.driver = driver
 
     def run(self):
+        status = True
         try:
             assert isinstance(self.driver, webdriver.Chrome)
             wait = WebDriverWait(self.driver, timeout=10)
@@ -21,16 +22,11 @@ class DeleteDeviceCase:
             with open("configs/delete_device.json", encoding='utf-8') as jsonFile:
                 configs = json.load(jsonFile)
 
-            # Navigate device grid
             self.driver.get(configs["default"]["devicesURL"])
             sleep(1)
 
-            # wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[mattooltip='Bulk Select']")))
-            # self.driver.find_element(By.CSS_SELECTOR, "[mattooltip='Bulk Select']").click()
-            # sleep(1)
-
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".search-toolbar input")))
-            self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["default"]["searchDeviceName"])
+            self.driver.find_element(By.CSS_SELECTOR, ".search-toolbar input").send_keys(configs["devicesURL"]["deviceName"])
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[mattooltip='Quick Actions']")))
@@ -62,7 +58,7 @@ class DeleteDeviceCase:
             sleep(2)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[placeholder='Type Delete']")))
-            self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Type Delete']").send_keys(configs["default"]["typeDelete"])
+            self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Type Delete']").send_keys(configs["devicesURL"]["confirmText"])
             sleep(1)
 
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".btn-save-process .mat-flat-button")))
@@ -70,8 +66,8 @@ class DeleteDeviceCase:
             sleep(1)
 
         except:
-            print("DELETE DEVICE ===========> FAILED")
+            status = False
         finally:
             for entry in self.driver.get_log("browser"):
-                # print("DELETE DEVICE ===========> PASSED")
                 logger.log(entry)
+            return status
