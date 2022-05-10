@@ -10,9 +10,11 @@ from tests.delete_device import delete_device
 
 
 def run():
+    runningStatus.delete("1.0", END)
+    runningStatus.insert(INSERT, "RESULTS:\n")
+    runningStatus.insert(INSERT, "\n")
     webdriver = chromedriver.ChromeDriver()
     webdriver.maximize()
-    runningStatus.delete("1.0", END)
     # Sign In Case
     signInStatus = sign_in.SignInCase(webdriver.driver).run()
     if signInStatus == True:
